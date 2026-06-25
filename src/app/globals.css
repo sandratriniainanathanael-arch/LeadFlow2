@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  border-color: #16213D;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050B18;
+  color: #E7ECF7;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgba(0, 229, 255, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050B18;
+}
+::-webkit-scrollbar-thumb {
+  background: #16213D;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1E90FF;
+}
+
+.text-gradient-brand {
+  background-image: linear-gradient(135deg, #1E90FF 0%, #00E5FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(30, 144, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 144, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #8B97B8 0%, #00E5FF 50%, #8B97B8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.blur-locked {
+  filter: blur(5px);
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring {
+  @apply outline-none ring-2 ring-cyan/60 ring-offset-2 ring-offset-background;
+}
